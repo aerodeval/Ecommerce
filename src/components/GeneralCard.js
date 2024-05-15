@@ -28,7 +28,7 @@ const items = [
     "id": 1,
     "Name": "Marcos Hahn",
     "Discount": 30,
-    "orignal-price": 10135,
+    "orignal-price": 105,
     "discount-price": 34996,
     "Review": 59279,
     "Stars":Math.floor(Math.random() * 5),
@@ -39,7 +39,7 @@ const items = [
     "id": 2,
     "Name": "Dr. Brandy Bins",
     "Discount": 10,
-    "orignal-price": 65949,
+    "orignal-price": 649,
     "discount-price": 33286,
     "Review": 73287,
     "Stars":Math.floor(Math.random() * 5),
@@ -51,7 +51,7 @@ const items = [
     "id": 3,
     "Name": "Iris Jaskolski",
     "Discount": 43,
-    "orignal-price": 5002,
+    "orignal-price": 502,
     "discount-price": 79438,
     "Review": 4466,
     "Stars":Math.floor(Math.random() * 5),
@@ -62,7 +62,7 @@ const items = [
     "id": 4,
     "Name": "Sonya Schoen",
     "Discount": 39,
-    "orignal-price": 99790,
+    "orignal-price": 990,
     "discount-price": 28849,
     "Review": 95529,
     "Stars":Math.floor(Math.random() * 5),
@@ -72,7 +72,7 @@ const items = [
     "id": 5,
     "Name": "Ira Okuneva",
     "Discount": 37,
-    "orignal-price": 61027,
+    "orignal-price": 617,
     "discount-price": 69612,
     "Review": 55565,
     "Stars":Math.floor(Math.random() * 5),
@@ -81,7 +81,7 @@ const items = [
     "id": 6,
     "Name": "Mrs. Tabitha Sporer",
     "Discount": 50,
-    "orignal-price": 61734,
+    "orignal-price": 614,
     "discount-price": 87510,
     "Review": 372,
     "Stars":Math.floor(Math.random() * 5),
@@ -90,7 +90,7 @@ const items = [
 ]
 
 
-export default function ItemCard() {
+export default function GeneralCard() {
   const [emblaRef] = useEmblaCarousel({ loop: false })
 
   return (
@@ -102,10 +102,10 @@ export default function ItemCard() {
 
         <Card className='card-01 embla__slide' sx={{ maxWidth: 270, minWidth:270, backgroundColor: "#F5F5F5", boxShadow: 'none' }}>
           <div className='flex justify-between absolute gap-[8.5rem]'>
-            <div className='bg-[#DB4444]  ml-[12px] mt-[12px] max-w-[55px] max-h-[26px]  rounded-md'>
+            {/* <div className='bg-[#DB4444]  ml-[12px] mt-[12px] max-w-[55px] max-h-[26px]  rounded-md'>
               <p className='py-[4px] px-[20px] text-white text-[12px]'>{item.Discount}%</p>
-            </div>
-
+            </div> */}
+    <div></div>
             <div className='flex flex-col'>
               <CardActions className='p-0'>
                 <Button >
@@ -142,13 +142,11 @@ export default function ItemCard() {
             </p>
             <div className='flex'>
               <p className='text-[#DB4444] text-[16px] font-[500] pr-5'>${item['discount-price']}</p>
-              <p className='line-through text-[16px] font-[500] text-[#00000082] '>${item['orignal-price']}</p>
             </div>
-          </CardContent>
-          <div className='flex items-center bg-[#FFFFFF]'>
+            <div className='flex items-center bg-[#FFFFFF]'>
             <CardActions className='bg-[#FFFFFF]'>
               <Button size="small" color="primary">
-                <StarRating readOnly='true' initialRating={item.Stars} theme={{ size: 25 }} />
+                <StarRating readOnly='true' initialRating={item.Stars} theme={{ size: 15 }} />
 
               </Button>
 
@@ -157,6 +155,8 @@ export default function ItemCard() {
               ({item.Review})
             </p>
           </div>
+          </CardContent>
+  
         </Card>
 
       </div>))}
