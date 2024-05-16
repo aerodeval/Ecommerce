@@ -24,7 +24,7 @@ import { red } from '@mui/material/colors';
 
 const items = [
 
-  {
+  {  
     "id": 1,
     "Name": "Marcos Hahn",
     "Discount": 30,
@@ -33,7 +33,7 @@ const items = [
     "Review": 59279,
     "Stars":Math.floor(Math.random() * 5),
     "Image":"https://res.cloudinary.com/dm3ienizb/image/upload/v1715755509/gammaxx-l240-argb-1-500x500_1_zjrmcs.png"
-
+    ,"status":"new"
   },
   {
     "id": 2,
@@ -44,7 +44,7 @@ const items = [
     "Review": 73287,
     "Stars":Math.floor(Math.random() * 5),
     "Image":"https://res.cloudinary.com/dm3ienizb/image/upload/v1715755508/curology-j7pKVQrTUsM-unsplash_1_d8vqzn.png"
-
+     ,"variants": ["red", "yellow", "green"]
   }
   ,
   {
@@ -67,6 +67,8 @@ const items = [
     "Review": 95529,
     "Stars":Math.floor(Math.random() * 5),
     "Image":"https://res.cloudinary.com/dm3ienizb/image/upload/v1715755508/Copa_Sense_1_l9aloz.png"
+    ,"status":"new",
+    "variants": ["violet", "yellow"]
   },
   {
     "id": 5,
@@ -86,11 +88,13 @@ const items = [
     "Review": 372,
     "Stars":Math.floor(Math.random() * 5),
     "Image":"https://res.cloudinary.com/dm3ienizb/image/upload/v1715755509/sam-moghadam-khamseh-L_7MQsHl_aU-unsplash_1_u4hgv2.png"
-  }
+    ,"status":"new",
+    "variants": ["lightgreen", "orange"]
+}
 ]
 
 
-export default function GeneralCard() {
+export default function NewCard() {
   const [emblaRef] = useEmblaCarousel({ loop: false })
 
   return (
@@ -101,10 +105,19 @@ export default function GeneralCard() {
       <div key={item.id} className='p-10 relative'>
 
         <Card className='card-01 embla__slide' sx={{ maxWidth: 270, minWidth:270, backgroundColor: "#F5F5F5", boxShadow: 'none' }}>
-          <div className='flex justify-between absolute right-[25px] gap-[8.5rem]'>
-            {/* <div className='bg-[#DB4444]  ml-[12px] mt-[12px] max-w-[55px] max-h-[26px]  rounded-md'>
-              <p className='py-[4px] px-[20px] text-white text-[12px]'>{item.Discount}%</p>
-            </div> */}
+          
+        
+          <div className='flex justify-between absolute gap-[8.5rem]'>
+ 
+
+
+            
+        {
+          item.status  === 'new' ?           <div className='bg-[#00FF66]  ml-[12px] mt-[12px] max-w-[55px] max-h-[26px]  rounded-md'>
+          <p className='py-[4px] px-[10px] text-white text-[12px]'>NEW</p>
+          </div>           : <div className='text-[#F5F5F5]'>     oldsss  </div>
+        } 
+
     
     
             <div className='flex flex-col '>
@@ -155,7 +168,38 @@ export default function GeneralCard() {
               ({item.Review})
             </p>
           </div>
-          </CardContent>
+        <div>
+
+        {
+          item.variants  ?           <div className='flex gap-5 pt-[5px]' >
+
+
+{/* 
+let styleTag = document.getElementsByClassName(`${a}`);
+    console.log(styleTag)
+    for (let i = 0; i < styleTag.length; i++) {
+        styleTag[i].classList.add("clicked"); // Replace "your_text" with the text you want to add to the class name
+    } */}
+
+
+        
+{item.variants.map((variant, index) => (
+        <div  key={index}>
+        <button  className={`${item.Name}-${variant}`} 
+        >
+          <div className='w-[20px] h-[20px] rounded-3xl' style={{backgroundColor:`${variant}`}}>
+          &nbsp;
+          </div>
+          </button>
+          {/* Add other variant details here */}
+        </div>
+      ))}
+              
+          </div>          : <div></div>
+        } 
+  
+        </div>
+ </CardContent>
   
         </Card>
 
