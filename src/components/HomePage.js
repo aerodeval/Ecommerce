@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NavbarEz from './NavbarTop'
+import { Outlet, Link } from "react-router-dom";
+
+
 import Carousel from './Carousel'
 import Timer from '@joseavilasg/react-compound-timer'
 import cimage from '../imgs/Frame 560.png'
@@ -15,33 +18,29 @@ import ItemCard from './ItemCard'
 import GeneralCard from './GeneralCard'
 import NewCard from './NewCard'
 import Footer from './Footer'
+
+
 export default function HomePage() {
+  const [favs, setFavs] = useState([]);
+  const [favslen,setLen]=useState()
+
+  const addToFavs = (itemId, itemDesc) => {
+    // Check if the item already exists in favs before adding it
+    const existingItemIndex = favs.findIndex(item => item.itemId === itemId);
+    if (existingItemIndex === -1) {
+      setFavs([...favs, { itemId, itemDesc }]);
+    }
+    setLen(
+    favslen=favs.length()
+    )
+  };
   return (
     <div>
-
-      <header className='bg-black h-20 text-center text-white py-4 flex justify-between'>
-        <div></div>
-        <div className='flex justify-items-center'>
-          <div>
-            Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
-          </div>
-          <div className='underline font-bold px-5'>
-            Shop Now
-          </div>
-        </div>
-
-        <div className='flex justify-end px-10'>
-          <div>
-
-
-          </div>
-        </div>
-      </header>
       <div>
-        <NavbarEz></NavbarEz>
+        <NavbarEz favs={favslen}></NavbarEz>
 
       </div>
-      <section>
+      <section className='pb-[147px]'>
         <div className='flex flex-row'>
           <div className='basis-1/4'>
             <ul className='shop-sections text-left pl-20 items-center'>
@@ -84,14 +83,15 @@ export default function HomePage() {
 
         </div>
       </section>
-      <section className=''>
-        <div className='pl-20 pr-20'>
+      <section >
+        <div className='pl-20 pr-20 flex justify-between items-center'>
+          <div>
           <p className='flex justify-start tab items-center'>Today's</p>
-          <div className='flex justify-between items-center'>
+          <div className='flex gap-[87px] items-center'>
 
             <h1 className='flex justify-start section-title '>Flash Sales</h1>
 
-            <div className='flex gap-10 timer-text items-center'>
+            <div className='flex gap-[17px] timer-text items-center timer-clock'>
               <Timer
                 initialTime={3133355000}
                 direction="backward"
@@ -99,8 +99,8 @@ export default function HomePage() {
                 {() => (
                   <React.Fragment>
                     <div className='items-start'>
-                      <p>Days</p>
-                      <Timer.Days />
+                      <p className='font-[500] text-[12px]'>Days</p>
+                      <Timer.Days className="font-[700] text-[32px]" />
                     </div>
                     <svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="2" cy="2" r="2" fill="#E07575" />
@@ -108,8 +108,8 @@ export default function HomePage() {
                     </svg>
 
                     <div className='items-start'>
-                      <p>Hours</p>
-                      <Timer.Hours />
+                      <p className='font-[500] text-[12px]'>Hours</p>
+                      <Timer.Hours  className="font-[700] text-[32px]" />
                     </div>
                     <svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="2" cy="2" r="2" fill="#E07575" />
@@ -117,8 +117,8 @@ export default function HomePage() {
                     </svg>
 
                     <div className='items-start'>
-                      <p>Minutes</p>
-                      <Timer.Minutes />
+                      <p className='font-[500] text-[12px]'>Minutes</p>
+                      <Timer.Minutes className="font-[700] text-[32px]" />
                     </div>
                     <svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="2" cy="2" r="2" fill="#E07575" />
@@ -126,14 +126,18 @@ export default function HomePage() {
                     </svg>
 
                     <div className='items-start'>
-                      <p>Seconds</p>
-                      <Timer.Seconds />
+                      <p className='font-[500] text-[12px]'>Seconds</p>
+                      <Timer.Seconds className="font-[700] text-[32px]" />
                     </div>
                   </React.Fragment>
                 )}
               </Timer>
             </div>
-            <div className='flex justify-end'>
+         
+          </div>
+          </div>
+          <div>
+          <div className='flex justify-end'>
               <div className='flex'>
                 <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="23" cy="23" r="23" fill="#F5F5F5" />
@@ -151,11 +155,14 @@ export default function HomePage() {
         </div>
 
         <div className='overflow-hidden'>
-          <ItemCard></ItemCard>
+          <ItemCard addToFavs={addToFavs}></ItemCard>
         </div>
 
         <div className='flex justify-center pb-10  '>
-          <h1 className='text-white p-[10px] bg-[#DB4444] rounded-md '> View All Products</h1>
+          <h1 className='text-white p-[10px] px-[48px] bg-[#DB4444] rounded-md '> View All Products</h1>
+        </div>
+        <div className=' flex justify-center items-center pb-[80px]'>
+          <div className='bottom-sep'>  </div>
         </div>
       </section>
       <section>
@@ -316,6 +323,9 @@ export default function HomePage() {
 
           </div>
 
+        </div>
+        <div className=' flex justify-center items-center pb-[80px]'>
+          <div className='bottom-sep pt-[70px]'>  </div>
         </div>
 
       </section>

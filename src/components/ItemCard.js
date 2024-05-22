@@ -22,6 +22,9 @@ import {
 import { red } from '@mui/material/colors';
 
 
+const favs=[]
+
+
 const items = [
 
   {
@@ -90,8 +93,22 @@ const items = [
 ]
 
 
-export default function ItemCard() {
+export default function ItemCard(addToFavs) {
   const [emblaRef] = useEmblaCarousel({ loop: false })
+  // function addToDic(itemId,itemDesc){
+
+  //   const existingItemIndex = favs.findIndex(item => item.itemId === itemId);
+
+  //   if (existingItemIndex !== -1) {
+  //     // Item already exists, handle it here
+  //     console.log('Item with the same itemId already exists. You may want to update it.');
+  //     // For now, let's just return
+  //     return;
+  //   }
+
+  //   favs.push({ itemId,itemDesc})
+  //   console.log(favs)
+  // }
 
   return (
     <div  className="embla" ref={emblaRef} > 
@@ -103,12 +120,12 @@ export default function ItemCard() {
         <Card className='card-01 embla__slide' sx={{ maxWidth: 270, minWidth:270, backgroundColor: "#F5F5F5", boxShadow: 'none' }}>
           <div className='flex justify-between absolute gap-[8.5rem]'>
             <div className='bg-[#DB4444]  ml-[12px] mt-[12px] max-w-[55px] max-h-[26px]  rounded-md'>
-              <p className='py-[4px] px-[20px] text-white text-[12px]'>{item.Discount}%</p>
+              <p className='py-[4px] pl-[16px] pr-[20px] text-white text-[12px]'>{item.Discount}%</p>
             </div>
 
             <div className='flex flex-col'>
               <CardActions className='p-0'>
-                <Button >
+                <Button onClick={()=>{addToFavs( item.id,item['discount-price'])}} >
                   <div className=' bg-[#FFFFFF] w-[34px] h-[34px] rounded-[20px]'>
                     <FavoriteBorderOutlinedIcon className='mt-1.5 text-black'></FavoriteBorderOutlinedIcon>
                   </div>

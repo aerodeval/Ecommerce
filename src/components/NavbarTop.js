@@ -1,13 +1,27 @@
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 
-function NavbarEz() {
-  return (
+import { Outlet, Link } from "react-router-dom";
 
+function NavbarEz(favslen) {
+  return (<div>
+      <p>Favorite Items: {favslen}</p>
+    <header className='bg-black h-20 text-center text-white py-7 flex justify-between'>
+    <div></div>
+    <div className='flex justify-items-center'>
+      <div>
+        Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
+      </div>
+      <div className='underline font-bold px-5'>
+        Shop Now
+      </div>
+    </div>
+
+    <div className='flex justify-end px-10'>
+      <div>
+
+
+      </div>
+    </div>
+  </header>
     <nav class="bg-white text-black mx-auto border-2  border-b-gray-100 ">
 
       <div class="container flex justify-between items-center  p-6 text-black-800 capitalize mx-auto ">
@@ -15,13 +29,13 @@ function NavbarEz() {
           <h1 className='font-bold text-2xl'>Exclusive</h1>
         </div>
         <div>
-        <a href="#" class="text-black-800  border-b-2 border-blue-500 mx-1.5 sm:mx-6">home</a>
+        <Link to="/" class="text-black-800 active:border-b-2 border-blue-500 mx-1.5 sm:mx-6  ">home</Link>
 
         <a href="#" class="border-b-2 border-transparent hover:text-black-800  hover:border-blue-500 mx-1.5 sm:mx-6">Features</a>
 
         <a href="#" class="border-b-2 border-transparent hover:text-black-800  hover:border-blue-500 mx-1.5 sm:mx-6">Pricing</a>
-
-        <a href="#" class="border-b-2 border-transparent hover:text-black-800  hover:border-blue-500 mx-1.5 sm:mx-6">Sign Up</a>
+        
+        <Link to="/SignUp" class="border-b-2 border-transparent hover:text-black-800  hover:border-blue-500 mx-1.5 sm:mx-6">Sign Up</Link>
 
         </div>
 
@@ -57,6 +71,7 @@ function NavbarEz() {
       </div>
 
     </nav>
+    </div>
   );
 }
 

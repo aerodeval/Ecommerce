@@ -11,7 +11,7 @@ export default function Footer() {
             <p className='text-[16px]'>Get 10% off your first order</p>
             <div className='flex send-email items-center'>
                 <div className='w-[180px] py-[12px] pl-[16px] pr-[32px]'>
-                    <input className='w-[180px] bg-[#0000000]' placeholder='Enter your email'></input>
+                    <input className='w-[180px] bg-[#000000]' placeholder='Enter your email'></input>
                 
                 </div>
                 <div className='pr-[15px]'><svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
