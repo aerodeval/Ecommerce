@@ -4,11 +4,12 @@ import NavbarEz from './components/NavbarTop';
 import SignUp from './components/SignUp';
 import HomePage from './components/HomePage';
 import LoginPage from './components/LoginPage';
+import { FavProvider } from './FavContext';
 
 function App() {
 
 
-  return (
+  return (    <FavProvider>
     <div className="App">
              <Routes>
              <Route path='/'Component={HomePage} />
@@ -17,7 +18,7 @@ function App() {
 
         </Routes>
 
-    </div>
+    </div></FavProvider>
   );
 }
 

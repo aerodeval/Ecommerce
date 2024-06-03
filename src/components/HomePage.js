@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import NavbarEz from './NavbarTop'
 import { Outlet, Link } from "react-router-dom";
 
@@ -12,6 +12,7 @@ import bimage from '../imgs/69-694768_amazon-echo-png-clipart-transparent-amazon
 import zimage from '../imgs/652e82cd70aa6522dd785109a455904c.png'
 import ximage from '../imgs/attractive-woman-wearing-hat-posing-black-background 1.png'
 
+import { FavContext } from '../FavContext';
 
 
 import ItemCard from './ItemCard'
@@ -21,23 +22,28 @@ import Footer from './Footer'
 
 
 export default function HomePage() {
-  const [favs, setFavs] = useState([]);
-  const [favslen,setLen]=useState()
 
-  const addToFavs = (itemId, itemDesc) => {
-    // Check if the item already exists in favs before adding it
-    const existingItemIndex = favs.findIndex(item => item.itemId === itemId);
-    if (existingItemIndex === -1) {
-      setFavs([...favs, { itemId, itemDesc }]);
-    }
-    setLen(
-    favslen=favs.length()
-    )
-  };
+  // const [favs, setFavs] = useState([]);
+  // const [favslen,setLen]=useState()
+
+  // const addToFavs = (itemId, itemDesc) => {
+  //   // Check if the item already exists in favs before adding it
+  //   const existingItemIndex = favs.findIndex(item => item.itemId === itemId);
+  //   if (existingItemIndex === -1) {
+  //     setFavs([...favs, { itemId, itemDesc }]);
+  //   }
+  //   setLen(
+  //   favslen=favs.length()
+  //   )
+  // };
+  
+  const { favs } = useContext(FavContext);
+
   return (
     <div>
       <div>
-        <NavbarEz favs={favslen}></NavbarEz>
+   
+        <NavbarEz ></NavbarEz>
 
       </div>
       <section className='pb-[147px]'>
@@ -155,7 +161,7 @@ export default function HomePage() {
         </div>
 
         <div className='overflow-hidden'>
-          <ItemCard addToFavs={addToFavs}></ItemCard>
+          <ItemCard  ></ItemCard>
         </div>
 
         <div className='flex justify-center pb-10  '>

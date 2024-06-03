@@ -12,9 +12,13 @@ import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { StarRating } from 'star-rating-react-ts'
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import useEmblaCarousel from 'embla-carousel-react'
+import { useState, createContext, useContext } from "react";
+
+import PropTypes from 'prop-types';
 import {
   CardActionArea
 } from '@mui/material';
+import { FavContext } from '../FavContext';
 
 import {
   CardActions
@@ -93,24 +97,32 @@ const items = [
 ]
 
 
-export default function ItemCard(addToFavs) {
+
+export default function ItemCard() {
+
+  
+
+
+  const { addToFavs } = useContext(FavContext);
+
+  const handleAddToFavs = (item) => {
+  
+    addToFavs(item);
+  };
+  
   const [emblaRef] = useEmblaCarousel({ loop: false })
-  // function addToDic(itemId,itemDesc){
-
-  //   const existingItemIndex = favs.findIndex(item => item.itemId === itemId);
-
-  //   if (existingItemIndex !== -1) {
-  //     // Item already exists, handle it here
-  //     console.log('Item with the same itemId already exists. You may want to update it.');
-  //     // For now, let's just return
-  //     return;
-  //   }
-
-  //   favs.push({ itemId,itemDesc})
-  //   console.log(favs)
-  // }
+  const [favs, setFavs] = useState([]);
+  const addToDic = (itemId, itemDesc) => {
+    if (!favs.includes(itemId)) {
+      setFavs([...favs, itemId]);
+      console.log(favs);
+    } else {
+      console.log(`Item with ID ${itemId} is already in favorites.`);
+    }
+  };
 
   return (
+    
     <div  className="embla" ref={emblaRef} > 
 
     <div className=' embla__container flex gap-[1rem]' >
@@ -125,8 +137,13 @@ export default function ItemCard(addToFavs) {
 
             <div className='flex flex-col'>
               <CardActions className='p-0'>
-                <Button onClick={()=>{addToFavs( item.id,item['discount-price'])}} >
-                  <div className=' bg-[#FFFFFF] w-[34px] h-[34px] rounded-[20px]'>
+                <Button onClick={() => {handleAddToFavs(item)
+                } 
+
+                  
+                 } >
+                  <div  className=' bg-[#FFFFFF] w-[34px] h-[34px] rounded-[20px]'>
+                 
                     <FavoriteBorderOutlinedIcon className='mt-1.5 text-black'></FavoriteBorderOutlinedIcon>
                   </div>
                 </Button>
@@ -182,4 +199,5 @@ export default function ItemCard(addToFavs) {
 
     </div>
   )
+
 }

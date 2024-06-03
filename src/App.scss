@@ -273,10 +273,11 @@ body {
 
 
 .add-to-cart{
+  position: relative;
 opacity: 0;
   transition: opacity 0.3s ease;
 }
-
+ 
 
 
 .card-01:hover .add-to-cart {
