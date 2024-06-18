@@ -36,6 +36,7 @@ export default function HomePage() {
   //   favslen=favs.length()
   //   )
   // };
+  $(carousel).slick() 
   
   const { favs } = useContext(FavContext);
 
@@ -47,26 +48,22 @@ export default function HomePage() {
 
       </div>
       <section className='pb-[147px]'>
-        <div className='flex flex-row'>
-          <div className='basis-1/4'>
-            <ul className='shop-sections text-left pl-20 items-center'>
+        <div className='flex xl:flex-row columns-2 items-center flex-col'>
+          <div className=' xl:w-100 xl:pr-[17px] '>
+            <ul className='shop-sections text-left  flex xl:flex-col xl:pl-[80px]  flex-row items-start '>
 
 
               <div className='flex items-center justify-between relative '>
-                <li className='womens'>Woman’s Fashion</li>
-                <svg className='absolute right-5' width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4.95 6.63597L0 1.68597L1.414 0.271973L7.778 6.63597L1.414 13L0 11.586L4.95 6.63597Z" fill="black" />
-                </svg>
+                <li className="womens after:content-['>']  after:ml-1.5">Woman’s Fashion</li>
+              
               </div>
 
               <div className='flex items-center justify-between relative'>
 
-                <li className='mens'>Men’s Fashion</li>
+                <li className="mens after:content-['>']  after:ml-1.5">Men’s Fashion</li>
 
 
-                <svg className='absolute right-5' width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4.95 6.63597L0 1.68597L1.414 0.271973L7.778 6.63597L1.414 13L0 11.586L4.95 6.63597Z" fill="black" />
-                </svg>
+             
 
               </div>
               <li>Electronics</li>
@@ -81,16 +78,22 @@ export default function HomePage() {
 
 
           </div>
-          <div className='carousel' >
+          <div  data-slick='{"slidesToShow": 4, "slidesToScroll": 4}' className='carousel' >
             {/* <Carousel></Carousel> */}
+
+            <div>
             <img src={cimage}></img>
+            </div>
+            <div>
+            <img src={cimage}></img>
+            </div>
           </div>
 
 
         </div>
       </section>
       <section >
-        <div className='pl-20 pr-20 flex justify-between items-center'>
+        <div className='pl-20 pr-20 flex justify-between items-center columns-3'>
           <div>
           <p className='flex justify-start tab items-center'>Today's</p>
           <div className='flex gap-[87px] items-center'>

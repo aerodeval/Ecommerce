@@ -57,14 +57,14 @@ function NavbarEz() {
             </button>
           </div>
         
-              <a href="#" class=" heart border-b-2 border-transparent hover:text-black-800  hover:border-blue-500 mx-1.5 sm:mx-6">
+              <Link to={{pathname:"/Favourites", state:{favs} }}   class=" heart border-b-2 border-transparent hover:text-black-800  hover:border-blue-500 mx-1.5 sm:mx-6">
             <div className="relative">
               <p className="absolute w-[20px] h-[20px] rounded-xl bg-[#DB4444] text-[13px] right-0 text-white bottom-[14px] left-[19px]">{favs.length}</p>
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
               </div>
-            </a>
+            </Link>
             
          
           <a href="#" class=" border-b-2 border-transparent hover:text-black-800  hover:border-blue-500 mx-1.5 sm:mx-6">
