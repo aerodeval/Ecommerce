@@ -2,8 +2,7 @@ import React, { useContext } from 'react'
 import NavbarEz from './NavbarTop'
 import { Outlet, Link } from "react-router-dom";
 
-
-import Carousel from './Carousel'
+import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Timer from '@joseavilasg/react-compound-timer'
 import cimage from '../imgs/Frame 560.png'
 import aimage from '../imgs/Frame 600.png'
@@ -11,7 +10,8 @@ import mimage from '../imgs/ps5-slim-goedkope-playstation_large 1.png'
 import bimage from '../imgs/69-694768_amazon-echo-png-clipart-transparent-amazon-echo-png 1.png'
 import zimage from '../imgs/652e82cd70aa6522dd785109a455904c.png'
 import ximage from '../imgs/attractive-woman-wearing-hat-posing-black-background 1.png'
-
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 import { FavContext } from '../FavContext';
 
 
@@ -36,7 +36,7 @@ export default function HomePage() {
   //   favslen=favs.length()
   //   )
   // };
-  $(carousel).slick() 
+  
   
   const { favs } = useContext(FavContext);
 
@@ -47,20 +47,20 @@ export default function HomePage() {
         <NavbarEz ></NavbarEz>
 
       </div>
-      <section className='pb-[147px]'>
-        <div className='flex xl:flex-row columns-2 items-center flex-col'>
-          <div className=' xl:w-100 xl:pr-[17px] '>
-            <ul className='shop-sections text-left  flex xl:flex-col xl:pl-[80px]  flex-row items-start '>
+      <section className='pb-[147px] flex justify-center'>
+        <div className='row container'>
+          <div className=' col-2  '>
+            <ul className='shop-sections text-left  flex flex-col items-start   '>
 
 
               <div className='flex items-center justify-between relative '>
-                <li className="womens after:content-['>']  after:ml-1.5">Woman’s Fashion</li>
+                <li className="womens">Woman’s Fashion</li>
               
               </div>
 
               <div className='flex items-center justify-between relative'>
 
-                <li className="mens after:content-['>']  after:ml-1.5">Men’s Fashion</li>
+                <li className="mens">Men’s Fashion</li>
 
 
              
@@ -78,29 +78,31 @@ export default function HomePage() {
 
 
           </div>
-          <div  data-slick='{"slidesToShow": 4, "slidesToScroll": 4}' className='carousel' >
-            {/* <Carousel></Carousel> */}
-
+ 
+          <Carousel className='col-9' showThumbs={false} autoPlay>
             <div>
             <img src={cimage}></img>
             </div>
             <div>
             <img src={cimage}></img>
             </div>
-          </div>
+          </Carousel>
 
 
         </div>
       </section>
       <section >
-        <div className='pl-20 pr-20 flex justify-between items-center columns-3'>
-          <div>
+        <div className='pl-20 pr-20 flex justify-between items-center'>
+          <div >
+            <div className='row' >
+              <div className='col-xl-6 col-sm-12'> 
           <p className='flex justify-start tab items-center'>Today's</p>
           <div className='flex gap-[87px] items-center'>
 
             <h1 className='flex justify-start section-title '>Flash Sales</h1>
-
-            <div className='flex gap-[17px] timer-text items-center timer-clock'>
+            </div>
+            </div>
+            <div className='flex gap-[17px] timer-text items-center timer-clock col-xl-4 col-sm-6'>
               <Timer
                 initialTime={3133355000}
                 direction="backward"
@@ -146,7 +148,7 @@ export default function HomePage() {
           </div>
           </div>
           <div>
-          <div className='flex justify-end'>
+          <div className='flex justify-end col-xl-3 col-sm-6'>
               <div className='flex'>
                 <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="23" cy="23" r="23" fill="#F5F5F5" />
@@ -176,7 +178,7 @@ export default function HomePage() {
       </section>
       <section>
 
-        <div className='pl-20 pr-20'>
+        <div className='pl-20 pr-20 '>
           <p className='flex justify-start tab items-center'>Categories</p>
           <div className='flex justify-between items-center'>
             <h1 className='flex justify-start section-title '>Browse By Category </h1>
@@ -500,3 +502,49 @@ export default function HomePage() {
       </div>
   )
 }
+
+
+
+
+// <div className='flex xl:flex-row columns-2 items-center flex-col'>
+{/* <div className=' xl:w-100 xl:pr-[17px] '>
+<ul className='shop-sections text-left  flex xl:flex-col xl:pl-[80px]  flex-row items-start '>
+
+
+  <div className='flex items-center justify-between relative '>
+    <li className="womens after:content-['>']  after:ml-1.5">Woman’s Fashion</li>
+  
+  </div>
+
+  <div className='flex items-center justify-between relative'>
+
+    <li className="mens after:content-['>']  after:ml-1.5">Men’s Fashion</li>
+
+
+ 
+
+  </div>
+  <li>Electronics</li>
+  <li>Home & Lifestyle</li>
+  <li> Medicine</li>
+  <li>Sports & Outdoor</li>
+  <li>Baby’s & Toys</li>
+  <li>Groceries & Pets</li>
+  <li>Health & Beauty</li>
+</ul>
+
+
+
+</div>
+
+<Carousel showThumbs={false} autoPlay>
+<div>
+<img src={cimage}></img>
+</div>
+<div>
+<img src={cimage}></img>
+</div>
+</Carousel>
+
+
+</div> */}
