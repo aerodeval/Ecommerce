@@ -14,7 +14,7 @@ export default function Cart() {
             </section>
 
             <section className='container'>
-                <table>
+                <table className='quant-table'>
                     <tr>
                         <th>Product</th>
                         <th>Price</th>
@@ -43,47 +43,47 @@ export default function Cart() {
                         </td>
                     </tr>
                 </table>
-                <div className='row'>
-                    <div className='col'><button class="px-[45px] py-[16px] border-solid border-2 border-[#00000080]">Return to Shop</button>  </div>
-                    <div className='col'><button class="px-[45px] py-[16px] border-solid border-2 border-[#00000080]">Update Cart</button>  </div>
+                <div className='row flex'>
+                    <div className='col flex justify-start'><button class="px-[45px] py-[16px] border-solid border-2 border-[#00000080]">Return to Shop</button>  </div>
+                    <div className='col  flex justify-end'><button class="px-[45px] py-[16px] border-solid border-2 border-[#00000080]">Update Cart</button>  </div>
                 </div>
-                <div className='row'>
-                    <div className='col-6'>
-                        <div className='row'>
-                            <input placeholder='Coupon code' className='col py-[16px] pl-[24px] pr-[124px] border-[#00000080] border-[1px] border-solid'></input>
-                            <button class="col px-[45px] py-[16px] bg-[#DB4444] text-white border-solid border-2 ">Apply Coupon</button>
+                <div className='row mt-[80px] mb-[20px] container flex gap-4 justify-between'>
+                    <div className='col-md-6'>
+                        <div className='row flex gap-6'>
+                            <input placeholder='Coupon code' className='col-md-12 col-xl-6 py-[16px] pl-[24px] border-[#00000080] border-[1px] border-solid'></input>
+                            <button class="col-md-12 col-xl-5 px-[45px] py-[16px] bg-[#DB4444] text-white border-solid border-2 ">Apply Coupon</button>
                         </div>
                     </div>
-                    <div className='col-4'>
-                        <div className='row'>
-                            <p>Cart Total</p>
+                    <div className='col-md-4 border-[1.5px] flex flex-col gap-10 border-solid border-[#000000]'>
+                        <div className='row justify-start'>
+                            <p className='text-left px-[12px] pt-[32px]'>Cart Total</p>
                         </div>
-                        <div className='row'>
-                            <div className='col'>
+                        <div className='row border-b-[1.5px] border-b-solid'>
+                            <div className='col text-left '>
                                 <p>Subtotal</p>
                             </div>
                             <div className='col'>
-                                <p>$1450</p>
+                                <p className=" text-right">$1450</p>
                             </div>
                         </div>
-                        <div className='row'>
+                        <div className='row text-left  border-b-[1.5px] border-b-solid' >
                             <div className='col'>
                                 <p>Shipping</p>
                             </div>
                             <div className='col'>
-                                <p>Free</p>
+                                <p className='text-right'>Free</p>
                             </div>
                         </div>
                         <div className='row'>
-                            <div className='col'>
+                            <div className='col text-left'>
                                 <p>Total</p>
                             </div>
-                            <div className='col'>
+                            <div className='col text-right'>
                                 <p>$1750</p>
                             </div>
                         </div>
-                        <div className='row'>
-                        <button class="col px-[45px] py-[16px] bg-[#DB4444] text-white border-solid border-2 ">Proceed to Checkout</button>
+                        <div className='row px-[60px] mb-[20px]'>
+                        <button class="col px-[30px] py-[16px] bg-[#DB4444] text-white border-solid border-2  ">Proceed to Checkout</button>
 
                         </div>
 

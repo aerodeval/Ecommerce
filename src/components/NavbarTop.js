@@ -36,9 +36,9 @@ function NavbarEz() {
         <div>
           <Link to="/" class="text-black-800 active:border-b-2 border-blue-500 mx-1.5 sm:mx-6  ">home</Link>
 
-          <a href="#" class="border-b-2 border-transparent hover:text-black-800  hover:border-blue-500 mx-1.5 sm:mx-6">Features</a>
+          <Link to="/Contact" class="border-b-2 border-transparent hover:text-black-800  hover:border-blue-500 mx-1.5 sm:mx-6">Contact</Link>
 
-          <a href="#" class="border-b-2 border-transparent hover:text-black-800  hover:border-blue-500 mx-1.5 sm:mx-6">Pricing</a>
+          <Link to="/About" class="border-b-2 border-transparent hover:text-black-800  hover:border-blue-500 mx-1.5 sm:mx-6">About</Link>
 
           <Link to="/SignUp" class="border-b-2 border-transparent hover:text-black-800  hover:border-blue-500 mx-1.5 sm:mx-6">Sign Up</Link>
 
