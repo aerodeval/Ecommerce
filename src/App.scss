@@ -2,7 +2,17 @@
  .App {
   text-align: center;
 }
+// importing core styling file
+@import './fonts/fontawesome/scss/fontawesome.scss';
 
+// our project needs Solid + Brands
+@import './fonts/fontawesome/scss/solid.scss';
+@import './fonts/fontawesome/scss/brands.scss';// importing core styling file
+@import './fonts/fontawesome/scss/fontawesome.scss';
+
+// our project needs Solid + Brands
+@import './fonts/fontawesome/scss/solid.scss';
+@import './fonts/fontawesome/scss/brands.scss';
 
 .App-logo {
   height: 40vmin;
@@ -368,3 +378,5 @@ opacity: 100;
     justify-content: center;
     color: white;
   }
+
+  $fa-font-path: './fonts/webfonts';

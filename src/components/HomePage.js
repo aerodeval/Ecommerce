@@ -43,8 +43,7 @@ export default function HomePage() {
   return (
     <div>
       <div>
-   
-        <NavbarEz ></NavbarEz>
+
 
       </div>
       <section className='pb-[147px] flex justify-center'>
@@ -497,7 +496,7 @@ export default function HomePage() {
 </div>
       </section>
       <section>
-      <Footer></Footer>
+
                 </section>
       </div>
   )

@@ -3,8 +3,9 @@ import React from 'react'
 export default function Footer() {
   return (
     <div className='bg-[#000000]'>
-    <div className='flex  text-[#FFFFFF] gap-[87px] justify-center text-left pt-[80px] '>
-        <div className=' flex flex-col gap-[16px] '> 
+    <div className=' container'>
+    <div className='flex  text-[#FFFFFF] gap-[87px] justify-center text-left pt-[80px]  row'>
+        <div className=' flex flex-col gap-[16px] col '> 
 
             <h1 className='font-[700] text-[24px]'>Exclusive</h1>
             <p className='text-[20px] font-[500]'>Subscribe</p>
@@ -23,13 +24,13 @@ export default function Footer() {
 
             </div>
         </div>
-        <div className=' flex flex-col gap-[16px] '>
+        <div className=' flex flex-col gap-[16px] col'>
             <h1 className='text-[20px] font-[500]'>Support</h1>
             <p className='text-[16px]'>111 Bijoy sarani, Dhaka,  DH 1515, Bangladesh.</p>
             <p className='text-[16px]' >exclusive@gmail.com</p>
             <p className='text-[16px]'>+88015-88888-9999</p>
         </div>
-        <div className=' flex flex-col gap-[16px] '>
+        <div className=' flex flex-col gap-[16px] col'>
             <h1 className='text-[20px] font-[500]'>Account</h1>
             <p className='text-[16px]'>My Account</p>
             <p className='text-[16px]' >Login / Register</p>
@@ -37,7 +38,7 @@ export default function Footer() {
             <p className='text-[16px]'>Wishlist</p>
             <p className='text-[16px]'>Shop</p>
         </div>
-        <div className=' flex flex-col gap-[16px] '>
+        <div className=' flex flex-col gap-[16px] col '>
             <h1 className='text-[20px] font-[500]'>Quick Link</h1>
             <p className='text-[16px]'>Privacy Policy</p>
             <p className='text-[16px]'>Terms of use</p>
@@ -45,7 +46,7 @@ export default function Footer() {
             <p className='text-[16px]'>Contact</p>
             
         </div>
-        <div className=' flex flex-col gap-[16px] '>
+        <div className=' flex flex-col gap-[16px] col'>
             <h1 className='text-[20px] font-[500]'>Download App</h1>
             <p>Save $3 with App New User Only</p>
             <div className='flex gap-[8px]'>
@@ -74,6 +75,7 @@ export default function Footer() {
     </div>
     {/* <hr className='divider'></hr> */}
     <p>Copyright Rimel 2022. All right reserved</p>
+    </div>
     </div>
   )
 }

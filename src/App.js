@@ -9,6 +9,8 @@ import Favourites from './components/Favourites';
 import Breadcrumbs from './components/Breadcrumbs';
 import Cart from './components/Cart';
 import About from './components/About';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 function App() {
 
 
@@ -16,6 +18,7 @@ function App() {
     
     <div className="App">
       
+<NavbarEz></NavbarEz>
              <Routes>
              <Route path='/'Component={HomePage} />
         <Route path="/SignUp" Component={SignUp}/>
@@ -23,11 +26,12 @@ function App() {
         <Route path="/Favourites" Component={Favourites}/>
         <Route path="/Cart" Component={Cart}/>
         <Route path="/About" Component={About}/>
+        <Route path="/Contact" Component={Contact}/>
         
 
         </Routes>
   
-
+        <Footer></Footer>
     </div></FavProvider>
   );
 }

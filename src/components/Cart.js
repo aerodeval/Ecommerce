@@ -5,7 +5,7 @@ import Breadcrumbs from './Breadcrumbs'
 export default function Cart() {
     return (
         <div>
-            <NavbarEz></NavbarEz>
+         
 
 
             <section className='pt-[40px] container'>
@@ -91,8 +91,7 @@ export default function Cart() {
 
                 </div>
             </section>
-            <Footer></Footer>
-
+  
         </div>
 
     )
