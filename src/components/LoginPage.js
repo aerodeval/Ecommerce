@@ -20,17 +20,17 @@ export default function LoginPage() {
   return (
     <div>
 
-    <NavbarEz></NavbarEz>
+
     <div className='flex gap-[129px]  items-center pt-[60px] pb-[140px]'>
-      <div className='w-1/2'>
+      <div className='w-1/2  hidden md:block'>
     <img src={require('../imgs/Side Image.png')} />
     </div>
-    <div className='w-[371px]   '>
+    <div className='w-[371px]  flex flex-col justify-center  container col '>
       <h1 className='text-[36px] font-[500] text-left'>Log in to Exclusive</h1>
       <p className='text-[16px] font-[400] text-left'>Enter your details below</p>
       <div className='flex flex-col gap-[40px] pt-[48px] pb-[40px]'>
-      <input  id='uname' className='w-[370px] text-[16px] sign-up p-2' placeholder='Email or Phone Number'></input>  
-      <input id='pass'  className='w-[370px] text-[16px] sign-up p-2' placeholder='Password'></input>
+      <input  id='uname' className=' text-[16px] sign-up p-2' placeholder='Email or Phone Number'></input>  
+      <input id='pass'  className=' text-[16px] sign-up p-2' placeholder='Password'></input>
       </div>
       <div className='log-pass-section flex gap-[87px] items-center'>
           <div className='bg-[#DB4444] mb-[16px] rounded-md ' >
@@ -49,7 +49,7 @@ export default function LoginPage() {
 
     </div>
     </div>
-    <Footer></Footer>
+ 
 </div>
   )
 }

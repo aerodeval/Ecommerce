@@ -17,8 +17,8 @@ export default function Breadcrumbs() {
     })
 
   return (
-    <div >
-       <p className="flex">Home/ {crumbs}</p>
+    <div  className="container mt-[80px]">
+       <p className="flex"> <span className="text-[#00000078]">Home  </span>  <span className="px-[15px]">/</span>  {crumbs}</p>
     </div>
   )
 }

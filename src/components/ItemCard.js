@@ -136,7 +136,7 @@ export default function ItemCard() {
             </div>
 
             <div className='flex flex-col'>
-              <CardActions className='p-0'>
+              <CardActions className='p-0 justify-around'>
                 <Button onClick={() => {handleAddToFavs(item)
                 } 
 

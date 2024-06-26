@@ -7,12 +7,11 @@ export default function SignUp() {
   return (
 <div>
 
-    <NavbarEz></NavbarEz>
     <div className='flex gap-[129px]  items-center pt-[60px] pb-[140px]'>
-      <div className='w-1/2'>
+      <div className='w-1/2 hidden md:block'>
     <img src={require('../imgs/Side Image.png')} />
     </div>
-    <div className='w-[371px]   '>
+    <div className='w-[371px] flex flex-col justify-center  '>
       <h1 className='text-[36px] font-[500] text-left'>Create an account</h1>
       <p className='text-[16px] font-[400] text-left'>Enter your details below</p>
       <div className='flex flex-col gap-[40px] pt-[48px] pb-[40px]'>
@@ -44,7 +43,7 @@ export default function SignUp() {
 
     </div>
     </div>
-    <Footer></Footer>
+
 </div>
   )
 }

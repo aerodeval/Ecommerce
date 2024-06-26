@@ -199,8 +199,8 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <div className='flex justify-center pt-[60px]'>
-          <div className='flex px-10 phone'>
+        <div className='flex justify-center pt-[60px] row'>
+          <div className='flex px-10 phone justify-center col-xl-2 col-6 mb-2'>
             <div className='min-w-[170px]  sec-card min-h-[145px] justify-center border-solid border-[1px] border-[#0000004D] rounded-md flex-col flex items-center' >
               <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_904_868)">
@@ -220,7 +220,7 @@ export default function HomePage() {
 
           </div>
 
-          <div className='flex px-10 computer  '>
+          <div className='flex px-10 computer justify-center  col-xl-2 col-6 mb-2 '>
             <div className='min-w-[170px]  sec-card min-h-[145px] justify-center border-solid border-[1px] border-[#0000004D] rounded-md flex-col flex items-center' >
               <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_904_613)">
@@ -243,7 +243,7 @@ export default function HomePage() {
           </div>
 
 
-          <div className='flex px-10 smartwatch  '>
+          <div className='flex px-10 smartwatch justify-center col-xl-2 col-6 mb-2 '>
             <div className='min-w-[170px] sec-card min-h-[145px] justify-center border-solid border-[1px] border-[#0000004D] rounded-md flex-col flex items-center' >
               <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_904_629)">
@@ -267,7 +267,7 @@ export default function HomePage() {
 
           </div>
 
-          <div className='flex px-10 Camera '>
+          <div className='flex px-10 Camera justify-center col-xl-2 col-6 mb-2'>
             <div className='min-w-[170px] sec-card min-h-[145px] justify-center border-solid border-[1px] border-[#0000004D] rounded-md flex-col flex items-center' >
               <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_904_6)">
@@ -287,7 +287,7 @@ export default function HomePage() {
 
           </div>
 
-          <div className='flex px-10 Headphones  '>
+          <div className='flex px-10 Headphones justify-center col-xl-2 col-6 mb-2'>
             <div className='min-w-[170px] sec-card min-h-[145px] justify-center border-solid border-[1px] border-[#0000004D] rounded-md flex-col flex items-center' >
               <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_904_644)">
@@ -309,7 +309,7 @@ export default function HomePage() {
 
           </div>
 
-          <div className='flex px-10 gaming '>
+          <div className='flex px-10 gaming justify-center col-xl-2 col-6 mb-2 '>
             <div className='min-w-[170px] sec-card min-h-[145px] justify-center border-solid border-[1px] border-[#0000004D] rounded-md flex-col flex items-center' >
               <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_904_809)">

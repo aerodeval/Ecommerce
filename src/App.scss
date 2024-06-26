@@ -380,3 +380,28 @@ opacity: 100;
   }
 
   $fa-font-path: './fonts/webfonts';
+
+
+
+
+  .about-card{
+  background-color: white;
+    transition: opacity 0.3s ease;
+  }
+  
+  
+  
+  .about-card:hover  {
+    .outer-circle{
+      background-color: #ffffff42
+    }
+    .inner-circle{
+      background-color: white;
+    }
+    i{
+      color: black;
+    }
+    color: white;
+    
+  background-color: #DB4444;
+  }
