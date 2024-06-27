@@ -7,7 +7,7 @@ export default function SignUp() {
   return (
 <div>
 
-    <div className='flex gap-[129px]  items-center pt-[60px] pb-[140px]'>
+    <div className='flex gap-[129px] justify-center  items-center pt-[60px] pb-[140px]'>
       <div className='w-1/2 hidden md:block'>
     <img src={require('../imgs/Side Image.png')} />
     </div>

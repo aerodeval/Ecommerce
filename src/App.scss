@@ -359,7 +359,8 @@ opacity: 100;
   .bottom-sep{
  
     border-bottom: 0.5px solid rgb(0 0 0 / 11%);     
-    min-width: 1000px;
+    max-width: 1000px;
+    min-width: 300px;
  
   }
 
